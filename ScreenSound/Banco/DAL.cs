@@ -38,6 +38,10 @@ namespace ScreenSound.Banco
         {
             return Context.Set<T>().FirstOrDefault(condicao);
         }
+        public IEnumerable<T> ListarPor(Func<T, bool> condicao)
+        {
+            return Context.Set<T>().Where(condicao);
+        }
 
     }
 }
